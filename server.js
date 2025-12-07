@@ -13,7 +13,6 @@ app.use("/auth", authRoutes);
 app.use("/products", require("./routes/products"));
 app.use("/users", authenticate, authorize(1), require("./routes/users"));
 app.use("/orders", authenticate, authorize(1), require("./routes/orders"));
-
 app.use("/upload", require("./routes/upload"));
 app.use("/uploads", express.static("uploads"));
 app.use("/otp", require("./routes/otp"));
