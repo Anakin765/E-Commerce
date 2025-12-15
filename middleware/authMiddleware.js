@@ -16,9 +16,10 @@ exports.authenticate = (req, res, next) => {
 
 exports.authorize = (...roles) => {
   return (req, res, next) => {
-    if (!roles.includes(req.user.role)) {
+    if (!roles.includes(req.user.role_id)) {
       return res.status(403).json({ error: "Access denied" });
     }
     next();
   };
 };
+
